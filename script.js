@@ -1,6 +1,7 @@
 const numbers = document.querySelectorAll(".number");
 const current = document.querySelector(".current");
 const allclear = document.querySelector(".allclear");
+const deci = document.querySelector(".decimal");
 
 function add(a, b) {
     num = a + b;
@@ -53,3 +54,15 @@ function allClear() {
 }
 
 allclear.onclick = function() {allClear()};
+
+function decimal() {
+    arr = current.innerHTML.split("");
+    if (arr.includes(".") === true) {
+        return;
+    }
+    else {
+        current.innerHTML += ".";
+    }
+}
+
+deci.onclick = function() {decimal()};
