@@ -1,7 +1,10 @@
 const numbers = document.querySelectorAll(".number");
 const current = document.querySelector(".current");
+const previous = document.querySelector(".previous");
 const allclear = document.querySelector(".allclear");
 const deci = document.querySelector(".decimal");
+const symbols = document.querySelectorAll(".symbols");
+const operand = document.querySelector(".operand");
 
 function add(a, b) {
     num = a + b;
@@ -51,6 +54,8 @@ function displayCurrent(e) {
 
 function allClear() {
     current.innerHTML = "";
+    previous.innerHTML = "";
+    operand.innerHTML = "";
 }
 
 allclear.onclick = function() {allClear()};
@@ -66,3 +71,13 @@ function decimal() {
 }
 
 deci.onclick = function() {decimal()};
+
+symbols.forEach((symb) => {
+    symb.addEventListener("click", displayPrevious);   
+});
+
+function displayPrevious(f) {
+    previous.innerHTML = current.innerHTML;
+    operand.innerHTML += f.target.innerHTML;
+    current.innerHTML = "";
+}
