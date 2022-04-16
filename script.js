@@ -1,5 +1,6 @@
 const numbers = document.querySelectorAll(".number");
 const current = document.querySelector(".current");
+const allclear = document.querySelector(".allclear");
 
 function add(a, b) {
     num = a + b;
@@ -41,8 +42,14 @@ function operate(a, b, operand) {
 
 numbers.forEach((numb) => {
     numb.addEventListener("click", displayCurrent);
-})
+});
 
 function displayCurrent(e) {
     current.innerHTML += e.target.innerHTML;
 }
+
+function allClear() {
+    current.innerHTML = "";
+}
+
+allclear.onclick = function() {allClear()};
