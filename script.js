@@ -1,3 +1,6 @@
+const numbers = document.querySelectorAll(".number");
+const current = document.querySelector(".current");
+
 function add(a, b) {
     num = a + b;
     return num;
@@ -34,4 +37,12 @@ function operate(a, b, operand) {
     else {
         return "OOPS";
     }
+}
+
+numbers.forEach((numb) => {
+    numb.addEventListener("click", displayCurrent);
+})
+
+function displayCurrent(e) {
+    current.innerHTML += e.target.innerHTML;
 }
