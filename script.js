@@ -90,6 +90,9 @@ function operation() {
     let a = parseFloat(previous.innerHTML);
     let b = parseFloat(current.innerHTML);
     let operator = operand.innerHTML;
+    if (operand.innerHTML === '÷') {
+        operator = '/';
+    }
     let result = operate(a, b, operator);
     allClear();
     current.innerHTML += result;
